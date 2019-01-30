@@ -1,0 +1,12 @@
+name: pythonSurvey2017
+title: pythonSurvey2017
+username:
+account: weixyang90
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 672025
+bundleId: 1845201
+url: https://weixyang90.shinyapps.io/pythonSurvey2017/
+when: 1548827544.70896
+asMultiple: FALSE
+asStatic: FALSE
