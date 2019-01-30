@@ -71,6 +71,7 @@ shinyServer(function(input, output){
       labs(fill="Purpose",x="", y = "ratio")
   )
   output$Purpose2 <- renderPlot(
+    height = 480,
     p %>%
       arrange(pnumber) %>%
       mutate(pnames=factor(pnames,pnames)) %>%
@@ -79,7 +80,7 @@ shinyServer(function(input, output){
       theme_minimal() +
       theme(
         panel.grid = element_blank(),
-        text = element_text(size=20), 
+        text = element_text(size=18), 
         plot.title = element_text(hjust = 0.5)
       )+
       scale_x_discrete(labels = function(x) str_wrap(x, width = 10))+
@@ -102,6 +103,7 @@ shinyServer(function(input, output){
       ggtitle("Ratio of Python using in the top 12 industries")
   )
   output$Country <- renderPlot(
+    height = 480,
     ggplot() +
       geom_map(data=WorldData, map=WorldData,
                aes(group=group, map_id=region),
@@ -133,12 +135,12 @@ shinyServer(function(input, output){
       theme_minimal() +
       theme(
         panel.grid = element_blank(),
-        text = element_text(size=20), 
+        text = element_text(size=15), 
         plot.title = element_text(hjust = 0.5)
       )+
       scale_x_discrete(labels = function(x) str_wrap(x, width = 10))+
       labs(fill="Country",x="Countries", y="number of Python users", title="Top 10 Countries that has most Python Users")
-  )
+    )
   
   output$Age <- renderPlot(
     age %>% 

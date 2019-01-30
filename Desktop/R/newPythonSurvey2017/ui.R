@@ -32,7 +32,7 @@ shinyUI(dashboardPage(
                 This shiny project is focusing on demonstrating data from survey of Python users on JetBean software, 
                 including the general Python usages, Python users in global community, age ranges of Python users, 
                 industries of Python users, what other languages do people use on JetBean.",align="center", 
-                style = "color : #FF7F50; font-size: 20px"),
+                style = "color : #515A5A; font-size: 20px"),
               hr(),
               img(src = "pic.jpeg", style="width:100%;height:600px;")),
       tabItem(tabName = "Usage",
@@ -47,7 +47,7 @@ shinyUI(dashboardPage(
       tabItem(tabName = "Age",
               fluidRow(column(5,plotOutput("Age")), column(7,plotOutput("Age2")))),
       tabItem(tabName = "Country",
-              fluidRow(column(12,plotOutput("Country"))),
+              fluidRow(column(12,plotOutput("Country")), style = "height: 480px"),
               hr(),
               fluidRow(column(12,plotOutput("Country2"))))
     )
