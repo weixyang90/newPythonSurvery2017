@@ -3,13 +3,16 @@
 shinyServer(function(input, output){
   # show map using googleVis
   output$usage <- renderPlot(
-    usage %>%
+    usage%>%
+      arrange(desc(count)) %>%
       ggplot(aes(x = "", y = count, fill=type)) +
       geom_bar(width = 1, stat = "identity")+
       coord_polar("y", start=0) +
       scale_fill_brewer(palette="YlGnBu")+
       theme_minimal()+
       ggtitle("Number of Usage")+
+      geom_text(aes(y = count/3 + c(0, cumsum(count)[-length(count)]), 
+                    label = percent(count/sum(count))), size=5)+
       theme(text = element_text(size=20), 
             plot.title = element_text(hjust = 0.5),
             panel.background = element_rect(fill = "lightblue",
@@ -103,7 +106,7 @@ shinyServer(function(input, output){
       ggtitle("Ratio of Python using in the top 12 industries")
   )
   output$Country <- renderPlot(
-    height = 480,
+    height = 540,
     ggplot() +
       geom_map(data=WorldData, map=WorldData,
                aes(group=group, map_id=region),
@@ -122,7 +125,7 @@ shinyServer(function(input, output){
             text = element_text(size=20), 
             plot.title = element_text(hjust = 0.5))+
       expand_limits(x = WorldData$long, y = WorldData$lat)
-   
+    
   )
   
   output$Country2 <- renderPlot(

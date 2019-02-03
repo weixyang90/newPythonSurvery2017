@@ -7,6 +7,10 @@ library(googleVis)
 library(stringr)
 library(maps)
 library(mapproj)
+library(corrplot)
+library(leaflet)
+library(shinydashboard)
+library(scales)
 data = read.csv('./data/pythondevsurvey2017_raw_data.csv', header=TRUE)
 colnames(data)
 colnames(data)[161] = "Age"
@@ -131,10 +135,11 @@ age$number
 
 
 c = data %>% select(., country = 162)
-Country = c %>% group_by(., country) %>% summarise(number = length(country)) %>% arrange(., desc(number)) %>% head(15)
+Country = c %>% group_by(., country) %>% summarise(number = as.numeric(length(country)))
+Country = na.omit(Country)
+Country$country = as.character(Country$country)
+Country$country[Country$country == "United States"] = "USA"
 Country
 WorldData <- map_data('world')
-WorldData %>% filter(region != "Antarctica") -> WorldData
-WorldData <- fortify(WorldData)
-
+Country
 choice = c("Python")
