@@ -26,12 +26,14 @@ shinyUI(dashboardPage(
    # ),
     tabItems(
       tabItem(tabName = "Home",
-              fluidRow(box(title = "Python User Surver 2017",
+              fluidRow(
+                box(title = "Python User Surver 2017",
                            footer = "Popularity of Python users is rapidly growing all around the world, 
                 people from software developer to data scientist use the language to perform different daily tasks. 
                 This shiny project is focusing on demonstrating data from survey of Python users on JetBean software, 
-                including the general Python usages, Python users in global community, age ranges of Python users, 
-                industries of Python users, what other languages do people use on JetBean.", width=12)),
+                to identify answers to questions including what is the general Python usages? How many Python users in global community?
+                What are the age ranges of Python users? What kinds of industries of Python users play roles in?
+                what other languages do people use on JetBean beside Python?", width=12), style="font-size: 16px"),
               fluidRow(box(img(src = "pic.jpeg", style="width:100%;height:600px;"), width=12))),
       tabItem(tabName = "Usage",
               fluidRow(column(12,plotOutput("usage")))),

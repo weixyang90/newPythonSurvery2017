@@ -5,8 +5,8 @@ account: weixyang90
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 672025
-bundleId: 1853810
+bundleId: 1854089
 url: https://weixyang90.shinyapps.io/pythonSurvey2017/
-when: 1549236165.34716
+when: 1549246735.8151
 asMultiple: FALSE
 asStatic: FALSE
