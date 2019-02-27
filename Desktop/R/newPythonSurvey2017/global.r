@@ -105,6 +105,7 @@ p %>%
     text = element_text(size=15), 
     plot.title = element_text(hjust = 0.5)
   )
+p
 
 
 usageRatio = data %>% select(., ratio = 141)
@@ -117,6 +118,7 @@ i = data %>% select(., industry = 146)
 ins = na.omit(i)
 Industry = ins %>% group_by(., industry) %>% summarise(ratio = length(industry)/nrow(i)) %>% arrange(., desc(ratio)) %>% head(12)
 #Industry %>% group_by(., industry) %>% summarise(count = length(industry))%>% arrange(desc(count)) %>% top_n(25, industry)
+
 work = data %>% select(., DBA = 149, Arcgutect = 150, QA.engineer = 151
                        , Developer = 152, Technical.Support = 153, Data.Analyst = 154,
                        Business.Analyst = 155, Team.Lead = 156, Product.Manager = 157,

@@ -83,7 +83,7 @@ shinyServer(function(input, output){
       theme_minimal() +
       theme(
         panel.grid = element_blank(),
-        text = element_text(size=18), 
+        text = element_text(size=16), 
         plot.title = element_text(hjust = 0.5)
       )+
       scale_x_discrete(labels = function(x) str_wrap(x, width = 10))+

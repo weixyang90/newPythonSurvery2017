@@ -33,7 +33,7 @@ shinyUI(dashboardPage(
                 This shiny project is focusing on demonstrating data from survey of Python users on JetBean software, 
                 to identify answers to questions including what is the general Python usages? How many Python users in global community?
                 What are the age ranges of Python users? What kinds of industries of Python users play roles in?
-                what other languages do people use on JetBean beside Python?", width=12), style="font-size: 16px"),
+                what other languages do people use on JetBean beside Python?",width=12)),
               fluidRow(box(img(src = "pic.jpeg", style="width:100%;height:600px;"), width=12))),
       tabItem(tabName = "Usage",
               fluidRow(column(12,plotOutput("usage")))),
